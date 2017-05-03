@@ -4,13 +4,11 @@ import store from '../store'
 
 export default function Home({user}) {
   return (
-  	<div>
+    <div>
       {
         user&&(<Link to='/myTeam'>My Team</Link>)
       }
     </div>
   )
 }
-
-
 

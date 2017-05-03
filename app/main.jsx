@@ -10,7 +10,7 @@ import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
 
-import {whoami} from './reducers/auth';
+import {whoami} from './reducers/auth'
 
 const Brotivator = connect(
   ({ auth }) => ({ user: auth })
@@ -24,9 +24,7 @@ const Brotivator = connect(
     </div>
 )
 
-const onHomeEnter = () => {
-  return store.dispatch(whoami())
-}
+const onHomeEnter = () => store.dispatch(whoami())
 
 render(
   <Provider store={store}>
