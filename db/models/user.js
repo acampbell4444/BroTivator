@@ -38,7 +38,6 @@ module.exports.associations = (User, {OAuth, Thing, Favorite, Team, UserAndTeam}
   User.hasOne(OAuth)
   User.belongsToMany(Thing, {as: 'favorites', through: Favorite})
   User.belongsToMany(Team, {as: 'teamUser', through: UserAndTeam})
-
 }
 
 function setEmailAndPassword(user) {
