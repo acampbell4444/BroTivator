@@ -9,4 +9,3 @@ module.exports = db => db.define('teams', {
 module.exports.associations = (Team, {User, UserAndTeam}) => {
   Team.belongsToMany(User, {as: 'userTeam', through: UserAndTeam})
 }
-
