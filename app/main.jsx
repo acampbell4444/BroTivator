@@ -5,10 +5,12 @@ import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
 
 import store from './store'
-import Home from './components/Home'
+import HomeContainer from './containers/HomeContainer'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
+
+import {whoami} from './reducers/auth';
 
 const Brotivator = connect(
   ({ auth }) => ({ user: auth })
@@ -22,12 +24,16 @@ const Brotivator = connect(
     </div>
 )
 
+const onHomeEnter = () => {
+  return store.dispatch(whoami())
+}
+
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={Brotivator}>
         <IndexRedirect to="/home" />
-        <Route path="/home" component={Home} />
+        <Route path="/home" component={HomeContainer} onEnter={onHomeEnter} />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>
