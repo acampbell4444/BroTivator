@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, ButtonToolbar, Modal} from 'react-bootstrap'
+import { Button, ButtonToolbar, Modal } from 'react-bootstrap'
 import { browserHistory } from 'react-router'
 
 export default class extends Component {
