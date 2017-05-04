@@ -7,6 +7,7 @@ import store from './store'
 
 import HomeContainer from './containers/HomeContainer'
 import TeamContainer from './containers/TeamContainer'
+import NewTeamModalContainer from './containers/NewTeamModalContainer'
 
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
@@ -28,14 +29,18 @@ const Brotivator = connect(
 
 const onHomeEnter = () => store.dispatch(whoami())
 
+const onTeamEnter = () => store.dispatch(whoami())
+
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={Brotivator}>
         <IndexRedirect to="/home" />
         <Route path="/home" component={HomeContainer} onEnter={onHomeEnter} />
-        <Route path="/user/:userId/team" component={TeamContainer} />
+        <Route path="/user/:userId/team" component={TeamContainer} onEnter={onTeamEnter} />
+        <Route path="/user/:userId/team/newTeamModal" component={NewTeamModalContainer} />
       </Route>
+
       <Route path='*' component={NotFound} />
     </Router>
   </Provider>,

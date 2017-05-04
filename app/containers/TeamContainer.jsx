@@ -1,13 +1,12 @@
 import Team from '../components/Team'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import {whoami} from '../reducers/auth'
 
-const mapStateToProps = (state) => {
-  const user = state.auth
-  return {
-    user
-  }
+const mapStateToProps = (state) => {}
+
+const mapDisptachToProps = (dispatch, ownProps) => {
+  const userId = ownProps.params.userId
+  return { userId }
 }
-
-const mapDisptachToProps = (dispatch, ownProps) => {}
 
 export default connect(mapStateToProps, mapDisptachToProps)(Team)
