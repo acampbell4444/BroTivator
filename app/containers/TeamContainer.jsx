@@ -8,9 +8,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDisptachToProps = (dispatch, ownProps) => {
-  return {
-  }
-}
+const mapDisptachToProps = (dispatch, ownProps) => {}
 
 export default connect(mapStateToProps, mapDisptachToProps)(Team)

@@ -52,7 +52,7 @@ module.exports = app
   .use('/public', express.static(resolve(__dirname, '..', 'public')))
   .use(express.static(resolve(__dirname, '..', 'public')))
 
-  //BootStrap
+  // BootStrap
   .use('/bootstrap', express.static(join(__dirname, '../node_modules/bootstrap/dist')))
 
   // Serve our api - ./api also requires in ../db, which syncs with our database
