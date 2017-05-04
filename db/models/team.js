@@ -3,7 +3,7 @@
 const {STRING} = require('sequelize')
 
 module.exports = db => db.define('teams', {
-  name: STRING,
+  name: STRING
 })
 
 module.exports.associations = (Team, {User, UserAndTeam}) => {

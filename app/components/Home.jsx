@@ -6,7 +6,10 @@ export default function Home({user}) {
   return (
     <div>
       {
-        user&&(<Link to='/myTeam'>My Team</Link>)
+        user&&(<Link to={'/user/'+user.id+'/team'}>Team</Link>)
+      }
+      {
+        !user&&(<p>LogIn or SignUp to access your Workout Team</p>)
       }
     </div>
   )

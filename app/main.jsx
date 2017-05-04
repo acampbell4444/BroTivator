@@ -3,9 +3,12 @@ import React from 'react'
 import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
 import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
-
 import store from './store'
+
 import HomeContainer from './containers/HomeContainer'
+import TeamContainer from './containers/TeamContainer'
+
+
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
@@ -32,6 +35,7 @@ render(
       <Route path="/" component={Brotivator}>
         <IndexRedirect to="/home" />
         <Route path="/home" component={HomeContainer} onEnter={onHomeEnter} />
+        <Route path="/user/:userId/team" component={TeamContainer}  />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>
