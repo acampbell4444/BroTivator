@@ -1,20 +1,22 @@
-import React from 'react'
-import { Button, ButtonToolbar, Modal, Component } from 'react-bootstrap'
+import React, { Component } from 'react'
+import { Button, ButtonToolbar, Modal} from 'react-bootstrap'
+import { browserHistory } from 'react-router'
 
-export default class extends React.Component {
-  constructor (props) {
+export default class extends Component {
+  constructor(props) {
     super(props)
-    this.state = {show:true}
+    this.state = {show: true}
     this.hideModal = this.hideModal.bind(this)
   }
 
   hideModal() {
-    this.setState({show: false});
-    history.back()
+    this.setState({show: false})
+    const { userId } = this.props
+    browserHistory.push('/user/' + userId + '/team/')
   }
 
-  render () {
-    return ( 
+  render() {
+    return (
       <div>
         <Modal show={this.state.show} onHide={this.hideModal} bsSize="large" aria-labelledby="contained-modal-title-lg">
           <Modal.Header closeButton>

@@ -4,7 +4,7 @@ import store from '../store'
 
 class Team extends Component {
   render() {
-    let { userId } = this.props
+    const { userId } = this.props
 
     return (
       <div className='jumbotron'>

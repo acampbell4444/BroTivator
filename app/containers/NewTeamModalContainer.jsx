@@ -9,4 +9,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return { userId }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewTeamModal);
+export default connect(mapStateToProps, mapDispatchToProps)(NewTeamModal)
