@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 
 class Team extends Component {
-  render(){
-  const {user} = this.props
-  console.log(user)
+  render() {
+    const {user} = this.props
+    console.log(user)
 
     return (
       <div className='jumbotron'>
